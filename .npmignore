@@ -1,0 +1,7 @@
+# Only exclude these from npm package
+node_modules/
+src/test/
+.git/
+.gitignore
+
+# Keep dist/, src/, README.md, package.json, tsconfig.json
