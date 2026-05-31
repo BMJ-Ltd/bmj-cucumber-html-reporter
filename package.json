@@ -4,7 +4,7 @@
   "description": "Custom BMJ Cucumber HTML Reporter - Generate beautiful test reports for BMJ Masterclasses",
   "type": "module",
   "files": [
-    "dist/",
+    "lib/",
     "src/",
     "README.md",
     "LICENSE"
@@ -17,20 +17,20 @@
     "html report",
     "json to html"
   ],
-  "main": "dist/generate-report.js",
-  "types": "dist/generate-report.d.ts",
+  "main": "lib/generate-report.js",
+  "types": "lib/generate-report.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/generate-report.d.ts",
-      "import": "./dist/generate-report.js",
-      "require": "./dist/generate-report.js",
-      "default": "./dist/generate-report.js"
+      "types": "./lib/generate-report.d.ts",
+      "import": "./lib/generate-report.js",
+      "require": "./lib/generate-report.js",
+      "default": "./lib/generate-report.js"
     }
   },
   "license": "MIT",
   "scripts": {
     "prebuild": "npm run generate:css && npm run generate:css:min",
-    "build": "tsc && cp -r src/templates dist/templates",
+    "build": "tsc && cp -r src/templates lib/templates",
     "postinstall": "npm run build",
     "generate:css": "npx @tailwindcss/cli -i ./src/templates/styles/main.css -o ./src/templates/assets/css/styles.css",
     "generate:css:min": "npx @tailwindcss/cli -i ./src/templates/styles/main.css -o ./src/templates/assets/css/styles.min.css --minify"
