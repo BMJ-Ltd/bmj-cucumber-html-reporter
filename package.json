@@ -31,7 +31,7 @@
   "scripts": {
     "prebuild": "npm run generate:css && npm run generate:css:min",
     "build": "tsc && cp -r src/templates lib/templates",
-    "postinstall": "npm run build",
+    "prepare": "npm run build",
     "generate:css": "npx @tailwindcss/cli -i ./src/templates/styles/main.css -o ./src/templates/assets/css/styles.css",
     "generate:css:min": "npx @tailwindcss/cli -i ./src/templates/styles/main.css -o ./src/templates/assets/css/styles.min.css --minify"
   },
