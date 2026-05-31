@@ -1,7 +1,13 @@
-# Only exclude these from npm package
-node_modules/
+# Exclude development and test files
 src/test/
-.git/
-.gitignore
+*.spec.ts
+*.test.ts
 
-# Keep dist/, src/, README.md, package.json, tsconfig.json
+# Exclude source maps (optional - remove if you want to include them)
+# *.map
+
+# Exclude git files
+.git/
+.github/
+
+# Keep: dist/, src/, package.json, README.md, tsconfig.json, .gitignore

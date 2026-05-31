@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "Custom BMJ Cucumber HTML Reporter - Generate beautiful test reports for BMJ Masterclasses",
   "type": "module",
+  "files": [
+    "dist/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
   "keywords": [
     "cucumber",
     "html",
