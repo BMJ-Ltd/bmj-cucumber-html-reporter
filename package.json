@@ -1,0 +1,65 @@
+{
+  "name": "bmj-cucumber-html-reporter",
+  "version": "1.0.0",
+  "description": "Custom BMJ Cucumber HTML Reporter - Generate beautiful test reports for BMJ Masterclasses",
+  "type": "module",
+  "keywords": [
+    "cucumber",
+    "html",
+    "test report",
+    "bmj",
+    "html report",
+    "json to html"
+  ],
+  "main": "dist/generate-report.js",
+  "types": "dist/generate-report.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/generate-report.d.ts",
+      "import": "./dist/generate-report.js",
+      "require": "./dist/generate-report.js",
+      "default": "./dist/generate-report.js"
+    }
+  },
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "npm run generate:css && npm run generate:css:min",
+    "build": "tsc && cp -r src/templates dist/templates",
+    "generate:css": "npx @tailwindcss/cli -i ./src/templates/styles/main.css -o ./src/templates/assets/css/styles.css",
+    "generate:css:min": "npx @tailwindcss/cli -i ./src/templates/styles/main.css -o ./src/templates/assets/css/styles.min.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BMJ-Ltd/poc-wp-in-house-HTML-report-generation.git"
+  },
+  "author": "Sandeep Kumar Patel - BMJ Masterclasses",
+  "bugs": {
+    "url": "https://github.com/BMJ-Ltd/poc-wp-in-house-HTML-report-generation/issues"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "homepage": "https://github.com/WasiqB/multiple-cucumber-html-reporter#readme",
+  "dependencies": {
+    "find": "^0.3.0",
+    "fs-extra": "^11.3.5",
+    "jsonfile": "^6.2.1",
+    "liquidjs": "^10.25.7",
+    "lodash": "^4.18.1",
+    "luxon": "^3.7.2",
+    "open": "^11.0.0",
+    "uuid": "^14.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.4",
+    "@types/find": "^0.2.4",
+    "@types/fs-extra": "^11.0.4",
+    "@types/jsonfile": "^6.1.4",
+    "@types/lodash": "^4.17.24",
+    "@types/luxon": "^3.7.1",
+    "@types/node": "^25.9.1",
+    "@types/uuid": "^11.0.0",
+    "tailwindcss": "^4.2.4",
+    "typescript": "^5.7.3"
+  }
+}
